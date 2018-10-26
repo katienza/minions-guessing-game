@@ -3,16 +3,59 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Guessing Game</title>
+    <title>Minions Guessing Game</title>
     <link rel="stylesheet" href="main.css">
     <!-- the MAIN.CSS file is linked here -->
   </head>
 
   <body>
 
+  <div id='container'>
+
+    <div id='prompt' class='center'>
+      <h1>Guess the Number of Minions!</h1>
+      <h3>Input a number between 1 and 100.</h3>
+
+      <div id='hint-feedback'> 
+        <h5></h5>
+      </div>
+
+      <img class ='background' src='img/minionsbackground.jpg' alt=''>
+    </div>
+    
+    <div id='guess-feedback'>
+      <h4></h4>
+    </div>
+
+    <div id='input'> 
+      <input id='playerGuess' type='text' maxlength='3' placeholder='Input a number here' autofocus='autofocus'>
+      <button class='submit' type='submit'>Submit my guess!</button>
+    </div>
+
+    <div class='guesses'>
+      <ul id='guess-list'>
+        <h1>Your previous guesses:</h1>
+        <li id='guess1' class='guess'><img class='guess' src='img/minion1.jpg' alt='first guess'></li>
+        <li id='guess2' class='guess'><img class='guess' src='img/minion2.jpg' alt ='second guess'></li>
+        <li id='guess3' class='guess'><img class='guess' src='img/minion3.jpg' alt ='third guess'></li>
+        <li id='guess4' class='guess'><img class='guess' src='img/minion4.jpg' alt ='fourth guess'></li>
+        <li id='guess5' class='guess'><img class='guess' src='img/minion5.jpg' alt ='last guess'></li>
+    </div>
+
+    <div id='bottomButtons'>
+      <button class='buttons' id='hint' type='submit'>Hint</button>
+      <button class='buttons' id='reset' type='submit'>Play Again</button> 
+    </div>
+
+  </div>
 
 
-
+  
+  <div id='footer' class='footer'>
+    <img id='img1' class='footer' src='https://cloud.fullstackacademy.com/fullstack-academy-logo-color-on-white.png?mtime=20160802141645' alt='Fullstack Academy Logo'>
+    <p class='footer'> Developed by Ken Atienza <br>  Fork at <a href='https://github.com/katienza/minions-guessing-game'><img id='img3' class='footer' src='img/github.png' alt='gha'></a></p>
+    <img id='img2' class='footer' src='https://rjefw55j9d-flywheel.netdna-ssl.com/wp-content/uploads/2017/05/grace-hopper-logo-color-on-white.png' alt='Grace Hopper Academy Logo'>
+  </div>
 
     <!-- <script src='js/guessing-game.js'></script> -->
     <!-- uncomment the script tag above when you are ready to add JavaScript to your document -->

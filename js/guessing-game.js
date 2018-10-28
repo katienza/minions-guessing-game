@@ -1,13 +1,3 @@
-/* 
-
-Write your guess-game code here! Don't forget to look at the test specs as a guide. You can run the specs
-by running "testem".
-
-In this file, you will also include the event listeners that are needed to interact with your HTML file when
-a user clicks a button or adds a guess to the input field.
-
-*/
-
 document.getElementById('');
 
 class Game {
@@ -30,14 +20,11 @@ class Game {
       throw 'That is an invalid guess.';
     }
     this.playersGuess = guess;
-    
         
     return this.checkGuess();
   }
 
   checkGuess() {
-    
-    
     let feedbackText = '';
     
     if (this.playersGuess === this.winningNumber) {
@@ -46,6 +33,7 @@ class Game {
       feedbackText = 'You have already guessed that number.';
     } else {
       this.pastGuesses.push(this.playersGuess);
+
       if (this.pastGuesses.length === 5) {
         feedbackText = 'You Lose.';
       } else {
@@ -58,7 +46,7 @@ class Game {
     }
     // comment out these lines when checking test specs
     document.querySelector('#guess-feedback > h4').innerHTML = feedbackText;
-    document.querySelector(`#guess-list li:nth-child(${this.pastGuesses.length})`).innerHTML = this.playersGuess
+    document.querySelector(`#guess-list li:nth-child(${this.pastGuesses.length})`).innerHTML = this.playersGuess;
     
     return feedbackText;
   }
@@ -94,12 +82,26 @@ function shuffle(arr) {
 function playGame() {
   const game = newGame();
   const button = document.querySelector('button');
+  const input = document.querySelector('input');
+  const reset = document.querySelector('#reset');
+  const hint = document.querySelector('#hint');
 
   button.addEventListener('click', function() {
-    const playersGuess = +document.querySelector('input').value;
-    document.querySelector('input').value = '';
+    const playersGuess =+ input.value;
+
+    input.value = '';
 
     game.playersGuessSubmission(playersGuess);
+  });
+
+  hint.addEventListener('click', function() {
+    let hints = game.provideHint();
+
+    document.querySelector('h5').innerHTML = `The winning number is either ${hints[0]}, ${hints[1]}, ${hints[2]}`;
+  });
+
+  reset.addEventListener('click', function() {
+    game = newGame();
   });
 }
 

@@ -1,6 +1,3 @@
-/* Write your CSS code in this file */
-
-
 body {
   background-color: white;
 }
@@ -33,6 +30,11 @@ body {
   margin: 0 auto;
   border-width: 1px;
   border-color: gold;
+}
+
+#guess-feedback{
+  display: block;
+  text-align: center;
 }
 
 /* incorrect guesses styling */

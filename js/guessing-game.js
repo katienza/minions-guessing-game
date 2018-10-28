@@ -83,8 +83,8 @@ function playGame() {
   const game = newGame();
   const button = document.querySelector('button');
   const input = document.querySelector('input');
-  const reset = document.querySelector('#reset');
-  const hint = document.querySelector('#hint');
+  const hint = document.getElementById('hint');
+  const reset = document.getElementById('reset');
 
   button.addEventListener('click', function() {
     const playersGuess =+ input.value;

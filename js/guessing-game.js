@@ -35,12 +35,12 @@ class Game {
       this.pastGuesses.push(this.playersGuess);
 
       if (this.pastGuesses.length === 5) {
-        feedbackText = 'You Lose.';
+        feedbackText = 'You Lose. Want to try again?';
       } else {
         let diff = this.difference();
-        if (diff < 10) feedbackText = "You're burning up!";
-        else if (diff < 25) feedbackText = "You're lukewarm.";
-        else if (diff < 50) feedbackText = "You're a bit chilly.";
+        if (diff < 10) feedbackText = "You're burning up! The correct number is within 10";
+        else if (diff < 25) feedbackText = "You're lukewarm. The correct number is within 25";
+        else if (diff < 50) feedbackText = "You're a bit chilly. the correct number is within 50";
         else feedbackText = "You're ice cold!";
       }
     }

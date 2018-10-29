@@ -46,7 +46,7 @@ class Game {
     }
     // comment out these lines when checking test specs
     document.querySelector('#guess-feedback > h4').innerHTML = feedbackText;
-    document.querySelector(`#guess-list li:nth-child(${this.pastGuesses.length})`).innerHTML = this.playersGuess;
+    document.querySelector(`#guess${this.pastGuesses.length}`).innerHTML = this.playersGuess;
     
     return feedbackText;
   }
@@ -80,11 +80,12 @@ function shuffle(arr) {
 }
 
 function playGame() {
-  const game = newGame();
+  let game = newGame();
   const button = document.querySelector('button');
   const input = document.querySelector('input');
   const hint = document.getElementById('hint');
   const reset = document.getElementById('reset');
+  const layout = document.querySelector('#guess-list').innerHTML;
 
   button.addEventListener('click', function() {
     const playersGuess =+ input.value;
@@ -102,6 +103,9 @@ function playGame() {
 
   reset.addEventListener('click', function() {
     game = newGame();
+    document.querySelector('#guess-list').innerHTML = layout;
+    document.querySelector('#guess-feedback').innerHTML = '';
+    document.querySelector('#hint-feedback').innerHTML = '';
   });
 }
 
